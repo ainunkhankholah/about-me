@@ -22,7 +22,7 @@ Menampilkan informasi tentang saya, project experience, koleksi foto, pendidikan
 
 ## Tech Stack
 
-* **Backend**: Laravel 10
+* **Backend**: Laravel 12
 * **Frontend**: Livewire
 * **Admin Panel**: Filament
 * **Database**: MySQL
@@ -78,9 +78,23 @@ http://127.0.0.1:8000
 * URL: `/admin`
 * Bisa CRUD semua section: AboutMe, Project, Photo, Education, Skills
 
+### **Membuat User Admin Filament**
+ Jalankan **artisan make:filament**:
+
+```bash
+php artisan make:filament-user
+```
+
 ---
 ---
 
 ## License
 
 Ini adalah proyek pribadi, silakan kontak saya untuk penggunaan lain.
+
+
+## Project Status
+
+⚠️ **Perhatian:**  
+Portofolio ini masih **dalam pengembangan**. Konten, fitur, dan project experience akan terus **diperbarui secara berkala**.  
+Segera setelah ada proyek baru atau update konten, halaman ini akan diperbarui untuk menampilkan informasi terbaru.
