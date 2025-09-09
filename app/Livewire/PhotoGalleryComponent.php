@@ -9,7 +9,7 @@ class PhotoGalleryComponent extends Component
 {
     public function render()
     {
-        $photos = Photo::latest()->get();
+        $photos = Photo::all();
         return view('livewire.photo-gallery-component', compact('photos'));
     }
 }

@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources\Photos\Schemas;
 
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Textarea;
+use Illuminate\Support\Facades\Storage;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 
 class PhotoForm
 {
@@ -15,7 +16,11 @@ class PhotoForm
             ->components([
                 TextInput::make('title'),
                 FileUpload::make('image')
-                    ->image(),
+                    ->label('Photo')
+                    ->image()
+                    ->disk('public')
+                    ->directory('photos')
+                    ->visibility('public'),
                 Textarea::make('desc')
                     ->columnSpanFull(),
             ]);

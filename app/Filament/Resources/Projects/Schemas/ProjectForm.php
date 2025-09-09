@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\Projects\Schemas;
 
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 
 class ProjectForm
 {
@@ -22,7 +23,12 @@ class ProjectForm
                 TextInput::make('technologies'),
                 Textarea::make('impact')
                     ->columnSpanFull(),
-                TextInput::make('screenshot'),
+                FileUpload::make('screenshot')
+                    ->label('Project')
+                    ->image()
+                    ->disk('public')
+                    ->directory('Project')
+                    ->visibility('public'),
                 TextInput::make('url')
                     ->url(),
             ]);
