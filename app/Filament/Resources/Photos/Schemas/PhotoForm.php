@@ -2,6 +2,9 @@
 
 namespace App\Filament\Resources\Photos\Schemas;
 
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
 class PhotoForm
@@ -10,7 +13,11 @@ class PhotoForm
     {
         return $schema
             ->components([
-                //
+                TextInput::make('title'),
+                FileUpload::make('image')
+                    ->image(),
+                Textarea::make('desc')
+                    ->columnSpanFull(),
             ]);
     }
 }
